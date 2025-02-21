@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MQTTnet" Version="5.0.1.1416" />
+    <PackageReference Include="MQTTnet.AspNetCore" Version="5.0.1.1416" />
+    <PackageReference Include="MQTTnet.Extensions.ManagedClient" Version="4.3.7.1207" />
+    <PackageReference Include="MQTTnet.Server" Version="5.0.1.1416" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IoTFlow.MQTT.Interfaces\IoTFlow.MQTT.Interfaces.csproj" />
+    <ProjectReference Include="..\IoTFlow.MQTT.Services\IoTFlow.MQTT.Services.csproj" />
+    <ProjectReference Include="..\IoTFlow.MQTT.Utilities\IoTFlow.MQTT.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

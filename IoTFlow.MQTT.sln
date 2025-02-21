@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT", "IoTFlow.MQTT\IoTFlow.MQTT.csproj", "{E0D26A49-A30B-4965-8E73-617CE0975319}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT.Models", "IoTFlow.MQTT.Models\IoTFlow.MQTT.Models.csproj", "{A65D62A1-340C-404B-A6CE-4FA322CACD52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT.Interfaces", "IoTFlow.MQTT.Interfaces\IoTFlow.MQTT.Interfaces.csproj", "{AD8A18DF-5ADF-43D4-AE7C-0E2288C05351}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT.Services", "IoTFlow.MQTT.Services\IoTFlow.MQTT.Services.csproj", "{7AF38AB6-4DDC-481F-9E56-74CE015CC2F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTFlow.MQTT.Utilities", "IoTFlow.MQTT.Utilities\IoTFlow.MQTT.Utilities.csproj", "{DA0AABEC-88C0-41AC-B079-0282490BF791}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D26A49-A30B-4965-8E73-617CE0975319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D26A49-A30B-4965-8E73-617CE0975319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D26A49-A30B-4965-8E73-617CE0975319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D26A49-A30B-4965-8E73-617CE0975319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65D62A1-340C-404B-A6CE-4FA322CACD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65D62A1-340C-404B-A6CE-4FA322CACD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65D62A1-340C-404B-A6CE-4FA322CACD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65D62A1-340C-404B-A6CE-4FA322CACD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8A18DF-5ADF-43D4-AE7C-0E2288C05351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8A18DF-5ADF-43D4-AE7C-0E2288C05351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8A18DF-5ADF-43D4-AE7C-0E2288C05351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8A18DF-5ADF-43D4-AE7C-0E2288C05351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF38AB6-4DDC-481F-9E56-74CE015CC2F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF38AB6-4DDC-481F-9E56-74CE015CC2F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF38AB6-4DDC-481F-9E56-74CE015CC2F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF38AB6-4DDC-481F-9E56-74CE015CC2F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0AABEC-88C0-41AC-B079-0282490BF791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0AABEC-88C0-41AC-B079-0282490BF791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0AABEC-88C0-41AC-B079-0282490BF791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0AABEC-88C0-41AC-B079-0282490BF791}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D5E8B0E-0010-4143-A2D3-920D13EDBA40}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@IoTFlow.MQTT_HostAddress = http://localhost:5053
+
+GET {{IoTFlow.MQTT_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
