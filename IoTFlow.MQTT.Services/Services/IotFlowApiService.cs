@@ -69,13 +69,13 @@ namespace IoTFlow.MQTT.Services.Services
                 var container = JsonSerializer.Deserialize<MethodsContainerDto>(methods, options);
                 if (container == null || container.Methods == null)
                 {
-                    throw new Exception("Неправильно сформовані методи");
+                    throw new Exception("Incorrectly formed methods");
                 }
                 methodsList = container.Methods;
             }
             catch (Exception ex)
             {
-                throw new Exception("Неправильно сформовані методи", ex);
+                throw new Exception("Incorrectly formed methods", ex);
             }
 
             string jsonContent = JsonSerializer.Serialize(methodsList);
