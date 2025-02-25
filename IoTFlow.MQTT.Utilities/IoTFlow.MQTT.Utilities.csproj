@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IoTFlow.MQTT.Interfaces\IoTFlow.MQTT.Interfaces.csproj" />
+    <ProjectReference Include="..\IoTFlow.MQTT.Models\IoTFlow.MQTT.Models.csproj" />
   </ItemGroup>
 
 </Project>
