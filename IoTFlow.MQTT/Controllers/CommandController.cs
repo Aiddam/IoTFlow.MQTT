@@ -4,6 +4,7 @@ using MQTTnet.Server;
 using MQTTnet.Protocol;
 using IoTFlow.MQTT.Interfaces.Utilities;
 using IoTFlow.MQTT.Models.DTO;
+using IoTFlow.MQTT.Utilities;
 
 namespace IoTFlow.MQTT.Controllers
 {
@@ -30,9 +31,11 @@ namespace IoTFlow.MQTT.Controllers
 
             var topic = $"device/{model.DeviceGuid}/command";
 
+            string commandUrl = CommandUrlBuilder.BuildCommandUrl(model.Command, model.Parameters);
+
             var message = new MqttApplicationMessageBuilder()
                 .WithTopic(topic)
-                .WithPayload(model.Command)
+                .WithPayload(commandUrl)
                 .WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce)
                 .WithRetainFlag(false)
                 .Build();

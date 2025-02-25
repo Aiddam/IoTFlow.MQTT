@@ -11,7 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT.Interfaces", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT.Services", "IoTFlow.MQTT.Services\IoTFlow.MQTT.Services.csproj", "{7AF38AB6-4DDC-481F-9E56-74CE015CC2F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTFlow.MQTT.Utilities", "IoTFlow.MQTT.Utilities\IoTFlow.MQTT.Utilities.csproj", "{DA0AABEC-88C0-41AC-B079-0282490BF791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTFlow.MQTT.Utilities", "IoTFlow.MQTT.Utilities\IoTFlow.MQTT.Utilities.csproj", "{DA0AABEC-88C0-41AC-B079-0282490BF791}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A65D62A1-340C-404B-A6CE-4FA322CACD52} = {A65D62A1-340C-404B-A6CE-4FA322CACD52}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
