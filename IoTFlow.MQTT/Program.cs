@@ -116,12 +116,33 @@ app.UseMqttServer(server =>
     server.InterceptingPublishAsync += async args =>
     {
         var apiService = app.Services.GetRequiredService<IIotFlowApiService<LoginRequestDto, UserDto, RefreshRequestDto>>();
+        string payload = args.ApplicationMessage.Payload.IsEmpty
+            ? string.Empty
+            : Encoding.UTF8.GetString(args.ApplicationMessage.Payload.ToArray());
         if (args.ApplicationMessage.Topic.Contains("/method"))
         {
-            string payload = args.ApplicationMessage.Payload.IsEmpty
-                ? string.Empty
-                : Encoding.UTF8.GetString(args.ApplicationMessage.Payload.ToArray());
             await apiService.SetDeviceMethodsAsync(args.ClientId, payload);
+        }
+        else if (args.ApplicationMessage.Topic.Contains("/result"))
+        {
+            try
+            {
+                using var document = JsonDocument.Parse(payload);
+                var root = document.RootElement;
+
+                string correlationId = root.GetProperty("correlationId").GetString() ?? throw new BadHttpRequestException("Unknown correlation id");
+                bool success = root.GetProperty("success").GetBoolean();
+                string message = root.GetProperty("message").GetString() ?? string.Empty;
+                string resultValue = root.TryGetProperty("result", out JsonElement resElem)
+                    ? resElem.ToString()
+                    : string.Empty;
+
+                await apiService.HandleDeviceResponseAsync(args.ClientId, correlationId, success, message, resultValue);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error processing /result payload: {ex.Message}");
+            }
         }
     };
 });
