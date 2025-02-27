@@ -31,7 +31,7 @@ namespace IoTFlow.MQTT.Controllers
 
             var topic = $"device/{model.DeviceGuid}/command";
 
-            string commandUrl = CommandUrlBuilder.BuildCommandUrl(model.Command, model.Parameters);
+            string commandUrl = CommandUrlBuilder.BuildCommandUrl(model.Command, model.Parameters, model.CorrelationId);
 
             var message = new MqttApplicationMessageBuilder()
                 .WithTopic(topic)

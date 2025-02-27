@@ -108,5 +108,30 @@ namespace IoTFlow.MQTT.Services.Services
                 return false;
             }
         }
+
+        public async Task HandleDeviceResponseAsync(string deviceGuid, string correlationId, bool success, string message, string resultValue, CancellationToken cancellationToken = default)
+        {
+            _tokenStore.TryGetToken(deviceGuid, out var token);
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new Exception("Invalid Guid");
+            }
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var payload = new
+            {
+                CorrelationId = correlationId,
+                Success = success,
+                Message = message,
+                Result = resultValue
+            };
+
+            string jsonContent = JsonSerializer.Serialize(payload);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync($"{_baseUrl}api/devices/{deviceGuid}/handle-response", content, cancellationToken);
+            response.EnsureSuccessStatusCode();
+        }
     }
 }

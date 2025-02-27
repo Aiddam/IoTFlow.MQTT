@@ -8,5 +8,6 @@ namespace IoTFlow.MQTT.Models.DTO
         public string Command { get; set; } = string.Empty;
         public string DeviceGuid { get; set; } = string.Empty;
         public ICollection <MethodParameterResponseDto>? Parameters { get; set; }
+        public Guid CorrelationId { get; set; }
     }
 }
